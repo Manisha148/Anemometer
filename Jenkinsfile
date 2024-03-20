@@ -9,7 +9,7 @@ pipeline {
         steps {
             sh '''docker pull returntocorp/semgrep && \
             docker run \
-            -e SEMGREP_APP_TOKEN=$SEMGREP_APP_TOKEN \
+            -e SEMGREP_APP_TOKEN=$semgrep \
             -v "$(pwd):$(pwd)" --workdir $(pwd) \
             returntocorp/semgrep semgrep ci '''
       }
